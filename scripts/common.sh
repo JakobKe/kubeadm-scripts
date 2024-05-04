@@ -84,6 +84,6 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo apt-get install -y jq
 
 local_ip="$1"
-cat > /etc/default/kubelet << EOF
+sudo bash -c "cat > /etc/default/kubelet << EOF
 KUBELET_EXTRA_ARGS=--node-ip=$local_ip
-EOF
+EOF"
